@@ -12,23 +12,31 @@ package EstructuraDatos;
 public class ArbolB<T extends Comparable> {
     private T raiz;
     private ArbolB<T> izq, der;
-    String nivelRes;
+    int nivelRes;
+    boolean encontrado=false;
     String timeB;
    public ArbolB(){
        raiz=null;
        izq=der=null;
+       nivelRes=-1;
    }
    public boolean vacia(){
         return raiz==null;
    }
+   public void setEncontrado(){
+       encontrado=true;
+   }
+   public boolean getEncontrado(){
+       return encontrado;
+   }
    public String getTimeB(){
        return timeB;
    }
-   public String getNivelRes(){
+   public int getNivelRes(){
        return nivelRes;
     }
-   public void setNivelRes(String cad){
-       nivelRes=cad;
+   public void setNivelRes(int n){
+       nivelRes=n;
     }
 
    public void insertarAmp(T d){
@@ -138,38 +146,29 @@ public class ArbolB<T extends Comparable> {
     
    
    public int nivelResult(T dato){
-       
-       return nivelResult( dato, 0);
+       int res=nivelResult( dato, -1);
+       return  res;
    }
    private int nivelResult( T dato, int index){
        int res=index;
-       //boolean enco=encontrado;
-       if(raiz!=null){
-           
-           res=res+1;
-        
+       if(raiz!=null){       
            if(!raiz.equals(dato)){
-               // enco=true;
-                //System.out.println(res);
-            //}else{
-                res=izq.nivelResult(dato, res);
-                if(!izq.vacia()){
-                    res=res-1;
-                }
-                
-                res=der.nivelResult(dato, res);
-                if(!der.vacia()){
-                    res=res-1;
-                }
-                
+               if (!izq.vacia()) {
+                    res=izq.nivelResult(dato, res+1);
+                    System.out.println("***/"+izq.raiz+"/***");
+                    if(!izq.busquedaProfundidad(dato)){
+                        res=der.nivelResult(dato, res);                        
+                        if(!der.busquedaProfundidad(dato)){
+                            res=res-1;
+                        }
+                    }                   
+               }                                            
             }else{
-               res=res-1;
-               nivelRes=""+res;
-               System.out.println(res+"_"+nivelRes);
+               res=res+1;
+               System.out.println("--->"+res);               
+           }
        }
-       }
-       
-       //System.out.println(res);
+       System.out.println("**"+res+"**");
        return res;
    }
 }

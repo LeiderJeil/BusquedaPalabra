@@ -21,6 +21,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        areaResultado.setEditable(false);
     }
 
     /**
@@ -48,7 +49,7 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(1, 1, 1));
+        jPanel1.setBackground(new java.awt.Color(64, 64, 64));
 
         buscar.setText("Buscar");
         buscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -197,7 +198,7 @@ public class Principal extends javax.swing.JFrame {
                     int index;
                     int p;
                     int temporal, espacial;
-                    String nivelR;
+                    int nivelR;
                     String timeB;
                     
             if(!aux.equals("") || !dato.equals("")) {
@@ -219,7 +220,7 @@ public class Principal extends javax.swing.JFrame {
                      */
                     espacial=2*(p-1);
                     
-                    
+                    areaResultado.setText("");
                     areaResultado.append("****Resultado de Busqueda en profundidad****");
                     
                     if(encontrar==true){
@@ -229,14 +230,14 @@ public class Principal extends javax.swing.JFrame {
                         areaResultado.append("\nComplejidad Espacial : "+espacial);
                         areaResultado.append("\nTipo de arbol : Binario");
                         areaResultado.append("\nNivel Maximo del arbol : "+(p-1));
-                        areaResultado.append("\nNivel de la palabra "+palabraBuscar.getText()+" en el arbol : "+arbolProblema.getNivelRes());
+                        areaResultado.append("\nNivel de la palabra "+palabraBuscar.getText()+" en el arbol : "+index);
                     }else{
                         
-                        areaResultado.append("\n la palabra "+palabraBuscar.getSelectedText()+" no se encuentra en su texto ingresado");
+                        areaResultado.append("\n la palabra "+dato+" no se encuentra en su texto ingresado");
                         
                     }
                     System.out.println(p-1);
-                    System.out.println(nivelR);
+                    System.out.println(index);
                   }else{
                         texto.setText("");
                        JOptionPane.showMessageDialog(this, "Debe llenar todas la entradas");
@@ -254,6 +255,7 @@ public class Principal extends javax.swing.JFrame {
     private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
             texto.setText("");
             palabraBuscar.setText("");
+            areaResultado.setText("");
             texto.requestFocus();// TODO add your handling code here:
     }//GEN-LAST:event_limpiarActionPerformed
     public void llenarArbol(ArbolB<String> arbolProblema, String text){
