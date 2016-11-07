@@ -12,33 +12,17 @@ package EstructuraDatos;
 public class ArbolB<T extends Comparable> {
     private T raiz;
     private ArbolB<T> izq, der;
-    int nivelRes;
-    boolean encontrado=false;
-    String timeB;
    public ArbolB(){
        raiz=null;
        izq=der=null;
-       nivelRes=-1;
    }
    public boolean vacia(){
         return raiz==null;
    }
-   public void setEncontrado(){
-       encontrado=true;
-   }
-   public boolean getEncontrado(){
-       return encontrado;
-   }
-   public String getTimeB(){
-       return timeB;
-   }
-   public int getNivelRes(){
-       return nivelRes;
-    }
-   public void setNivelRes(int n){
-       nivelRes=n;
-    }
-
+/**
+ * Este metodo denominado insertarAmp es el encargado de crear y insertar 
+ * datos a un arbol binario.
+ */
    public void insertarAmp(T d){
         Cola<ArbolB<T>>c;
         c=new Cola<ArbolB<T>>();
@@ -57,17 +41,6 @@ public class ArbolB<T extends Comparable> {
             c.encolar(arb.der);
             insertarAmp(d, c);
         }
-   }
-   public int profundidad(){
-       return profundidad(0);
-   }
-   private int profundidad(int index){
-       int indexx=index;
-       if(raiz!=null){
-           indexx+=1;
-           indexx=izq.profundidad(indexx);
-       }
-       return indexx;
    }
    public T eliminar(T d){
         T res=null;
@@ -101,50 +74,46 @@ public class ArbolB<T extends Comparable> {
         }
         return res;
    }
-   
-   //public boolean busquedaProfundidad(ArbolB<T>arbolProblema, T dato){
-     //  return busquedaProfundidad(arbolProblema, dato, false);
-   //}
-   //public boolean busquedaProfundidad(ArbolB<T>arbolProblema, T dato, boolean bandera){
-     //  boolean res=bandera;
-       //if(arbolProblema.raiz!=null){
-         //  if(arbolProblema.raiz==dato){
-           //     res=true;
-           
-            //}else{
-              //  res=busquedaProfundidad(arbolProblema.izq, dato, bandera);
-                //res=busquedaProfundidad(arbolProblema.der, dato, bandera);
-           
-       //}
-       //}
-       //return res;
-   //}
+   /**
+    * Este metodo llamado busqueda profundidad se encarga de 
+    * decirnos con un valor booleano true o false, si un dato se encuentrar
+    * en un arbol binario especifico.
+    */
    public boolean busquedaProfundidad(T dato){
        return busquedaProfundidad( dato, false);
    }
    private boolean busquedaProfundidad( T dato, boolean bandera){
-       long startTime = System.currentTimeMillis(); 
        boolean res=bandera;
        if(raiz!=null){
            if(raiz.equals(dato)){
                 res=true;
-                long endTime = System.currentTimeMillis();
-                System.out.println(endTime-startTime);
-                timeB=""+(endTime-startTime);
-                
-                //System.out.println(res);
-           
             }else{
                 res=izq.busquedaProfundidad(dato, res);
-                res=der.busquedaProfundidad(dato, res);
-           
+                res=der.busquedaProfundidad(dato, res);          
        }
        }
-       //System.out.println(res);
        return res;
    }
-    
-   
+   /**
+    * Este metodo llamado profundidad nos dice el nivel que tiene
+    * un arbol binario.
+    */
+       public int profundidad(){
+       return profundidad(0);
+   }
+   private int profundidad(int index){
+       int indexx=index;
+       if(raiz!=null){
+           indexx+=1;
+           indexx=izq.profundidad(indexx);
+       }
+       return indexx;
+   }
+   /**
+    * Este metodo recursivo  denominado niverResul nos devuelve el
+    * nivel de profundiad que se encuentra un dato en un arbol binario
+    * especifico.
+    */
    public int nivelResult(T dato){
        int res=nivelResult( dato, -1);
        return  res;
@@ -155,7 +124,6 @@ public class ArbolB<T extends Comparable> {
            if(!raiz.equals(dato)){
                if (!izq.vacia()) {
                     res=izq.nivelResult(dato, res+1);
-                    System.out.println("***/"+izq.raiz+"/***");
                     if(!izq.busquedaProfundidad(dato)){
                         res=der.nivelResult(dato, res);                        
                         if(!der.busquedaProfundidad(dato)){
@@ -164,11 +132,9 @@ public class ArbolB<T extends Comparable> {
                     }                   
                }                                            
             }else{
-               res=res+1;
-               System.out.println("--->"+res);               
+               res=res+1;         
            }
        }
-       System.out.println("**"+res+"**");
        return res;
    }
 }

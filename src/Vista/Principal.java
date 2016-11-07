@@ -38,21 +38,31 @@ public class Principal extends javax.swing.JFrame {
         buscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         texto = new javax.swing.JTextArea();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         limpiar = new javax.swing.JButton();
         cerrar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         areaResultado = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(64, 64, 64));
 
+        buscar.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        buscar.setForeground(new java.awt.Color(254, 254, 254));
+        buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/buscar2.png"))); // NOI18N
         buscar.setText("Buscar");
-        buscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buscar.setBorder(null);
+        buscar.setBorderPainted(false);
+        buscar.setContentAreaFilled(false);
+        buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        buscar.setIconTextGap(-3);
+        buscar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/buscar3.png"))); // NOI18N
+        buscar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/buscar1.png"))); // NOI18N
+        buscar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        buscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarActionPerformed(evt);
@@ -64,59 +74,40 @@ public class Principal extends javax.swing.JFrame {
         texto.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingrese su  texto"));
         jScrollPane1.setViewportView(texto);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 20)); // NOI18N
-        jLabel2.setText("Busqueda de Palabra");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(31, 31, 31))
-        );
-
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel1.setFont(new java.awt.Font("Monospaced", 1, 15)); // NOI18N
-        jLabel1.setText("Ingrese palabra");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1))
-        );
-
+        limpiar.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        limpiar.setForeground(new java.awt.Color(254, 254, 254));
+        limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/clear1.png"))); // NOI18N
         limpiar.setText("Limpiar");
-        limpiar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        limpiar.setBorder(null);
+        limpiar.setBorderPainted(false);
+        limpiar.setContentAreaFilled(false);
+        limpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        limpiar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        limpiar.setIconTextGap(-3);
+        limpiar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/clear3.png"))); // NOI18N
+        limpiar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/clear2.png"))); // NOI18N
+        limpiar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        limpiar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limpiarActionPerformed(evt);
             }
         });
 
+        cerrar.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        cerrar.setForeground(new java.awt.Color(254, 254, 254));
+        cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/close1.png"))); // NOI18N
         cerrar.setText("Cerrar");
-        cerrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        cerrar.setBorder(null);
+        cerrar.setBorderPainted(false);
+        cerrar.setContentAreaFilled(false);
+        cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cerrar.setIconTextGap(-3);
+        cerrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/close3.png"))); // NOI18N
+        cerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/close2.png"))); // NOI18N
+        cerrar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        cerrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cerrarActionPerformed(evt);
@@ -128,6 +119,14 @@ public class Principal extends javax.swing.JFrame {
         areaResultado.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultado de la Busqueda"));
         jScrollPane2.setViewportView(areaResultado);
 
+        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 27)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel2.setText("Búsqueda de Palabra");
+
+        jLabel1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel1.setText("Ingrese palabra");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -135,45 +134,48 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(160, 160, 160)
+                        .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(palabraBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(palabraBuscar)
+                                .addGap(18, 18, 18)
+                                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2)
+                                .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
                             .addComponent(jScrollPane1))))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(55, 55, 55)
+                .addComponent(jLabel2)
+                .addGap(58, 58, 58)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(palabraBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buscar)))
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(limpiar)
-                    .addComponent(cerrar))
-                .addContainerGap(34, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(palabraBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cerrar, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                    .addComponent(limpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,13 +186,16 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+                    /**
+                     * Obtenemos los datos de entrada.
+                     */
                     String palabras=texto.getText();
                     String aux=texto.getText().replace("\t", " ");
                     aux=aux.trim();
@@ -198,25 +203,39 @@ public class Principal extends javax.swing.JFrame {
                     int index;
                     int p;
                     int temporal, espacial;
-                    int nivelR;
-                    String timeB;
                     
             if(!aux.equals("") || !dato.equals("")) {
-                    
+                
+                   /**
+                    * Creamos el arbol binario.
+                    */ 
                     ArbolB<String> arbolProblema=new ArbolB<>();
+                    /**
+                     * Llenamos el arbos binario invocando al metodo llenarArbol.
+                     */
                     llenarArbol(arbolProblema,palabras.toLowerCase());
+                    /**
+                     * Invocamos al metodo del arbol binario denominado busquedaProfundidad,
+                     * este mtodo nos dira con un valor boolano si el dato se encuentra en el arbol.
+                     */
                     boolean encontrar=arbolProblema.busquedaProfundidad(dato.toLowerCase());
-                    System.out.println(encontrar);
-                    index=arbolProblema.nivelResult(dato.toLowerCase());
-                    nivelR=arbolProblema.getNivelRes();
-                    timeB=arbolProblema.getTimeB();
+                    /**
+                     * Preguntamos al metodo del arbol binario nivelResult en que profundidad encontro el
+                     * dato.
+                     */
+                    index=arbolProblema.nivelResult(dato.toLowerCase());      
+                     /**
+                     * Preguntamos al metodo del arbol binario profundiad cual es el nivel mas profundo
+                     * del arbol.
+                     * 
+                     */
                     p=arbolProblema.profundidad();
                     /**
-                     * Calculando la complejidad temporal
+                     * Calculando la complejidad temporal.
                      */
                     temporal=(int)Math.pow(2,(p-1));
                     /**
-                     * Calculando la complejidad espacial
+                     * Calculando la complejidad espacial.
                      */
                     espacial=2*(p-1);
                     
@@ -224,21 +243,27 @@ public class Principal extends javax.swing.JFrame {
                     areaResultado.append("****Resultado de Busqueda en profundidad****");
                     
                     if(encontrar==true){
+                        /**
+                         * Si la busqueda salio correcta mostramos lo suiguiente.
+                         */
                         
-                        areaResultado.append("\nTiempo de Busqueda : "+timeB+" ms");
                         areaResultado.append("\nComplejidad Temporal : "+temporal);
                         areaResultado.append("\nComplejidad Espacial : "+espacial);
                         areaResultado.append("\nTipo de arbol : Binario");
                         areaResultado.append("\nNivel Maximo del arbol : "+(p-1));
                         areaResultado.append("\nNivel de la palabra "+palabraBuscar.getText()+" en el arbol : "+index);
                     }else{
-                        
+                        /**
+                         * Si la busqueda fue incorreca mostramos el mensaje.
+                         */
                         areaResultado.append("\n la palabra "+dato+" no se encuentra en su texto ingresado");
                         
                     }
-                    System.out.println(p-1);
-                    System.out.println(index);
+
                   }else{
+                    /**
+                     * alertamos los campo a llenar al usuario.
+                     */
                         texto.setText("");
                        JOptionPane.showMessageDialog(this, "Debe llenar todas la entradas");
                   }
@@ -258,6 +283,9 @@ public class Principal extends javax.swing.JFrame {
             areaResultado.setText("");
             texto.requestFocus();// TODO add your handling code here:
     }//GEN-LAST:event_limpiarActionPerformed
+    /**
+     * Metodo que llena el arbol binario con las palabras insertadas.
+     */
     public void llenarArbol(ArbolB<String> arbolProblema, String text){
         String cadena=text.trim();
         System.out.println(cadena);
@@ -334,8 +362,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton limpiar;
